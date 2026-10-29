@@ -1,0 +1,194 @@
+/**
+ * Sunvault Powertech Pvt. Ltd. - Initial Seed Data
+ * Contains 2 Admin Accounts (Subodh Kumar & Pratik Sir)
+ * + Exactly 10 Employee Accounts (IDs 1 to 10 with blank names by default)
+ * and the 15 official expense categories.
+ * All Initial Expenses, Advances, and Payments start at ZERO (0) for fresh live entry.
+ */
+
+import { User, CategoryItem, Expense, EmployeeAdvance, PaymentTransaction } from '../types';
+
+export const INITIAL_USERS: User[] = [
+  // Admin 1: Subodh Kumar
+  {
+    id: 'user-admin-subodh',
+    username: 'subodh',
+    employeeId: 'ADMIN-1',
+    name: 'Subodh Kumar',
+    role: 'admin',
+    email: 'subodhkumar18099@gmail.com',
+    phone: '+91 98201 11100',
+    department: 'Management',
+    isActive: true,
+    salt: 'salt-admin-subodh',
+    passwordHash: 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', // Admin@123
+  },
+  // Admin alias: admin (also Subodh Kumar)
+  {
+    id: 'user-admin-main',
+    username: 'admin',
+    employeeId: 'ADMIN',
+    name: 'Subodh Kumar',
+    role: 'admin',
+    email: 'subodhkumar18099@gmail.com',
+    phone: '+91 98201 11100',
+    department: 'Management',
+    isActive: true,
+    salt: 'salt-admin-main',
+    passwordHash: 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', // Admin@123
+  },
+  // Admin 2: Pratik Sir
+  {
+    id: 'user-admin-pratik',
+    username: 'pratik',
+    employeeId: 'ADMIN-2',
+    name: 'Pratik Sir',
+    role: 'admin',
+    email: 'pratik@sunvault.in',
+    phone: '+91 98201 22200',
+    department: 'Executive Operations',
+    isActive: true,
+    salt: 'salt-admin-pratik',
+    passwordHash: 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', // Admin@123
+  },
+
+  // 10 Employee Accounts (Employee IDs: 1 to 10, names blank by default)
+  {
+    id: 'user-emp-1',
+    username: 'emp1',
+    employeeId: '1',
+    name: '', // Blank by default as requested
+    role: 'employee',
+    department: 'Site Execution',
+    isActive: true,
+    salt: 'salt-emp-1',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', // Pass@emp1
+  },
+  {
+    id: 'user-emp-2',
+    username: 'emp2',
+    employeeId: '2',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Field Electrical',
+    isActive: true,
+    salt: 'salt-emp-2',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', // Pass@emp2
+  },
+  {
+    id: 'user-emp-3',
+    username: 'emp3',
+    employeeId: '3',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Solar Commissioning',
+    isActive: true,
+    salt: 'salt-emp-3',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', // Pass@emp3
+  },
+  {
+    id: 'user-emp-4',
+    username: 'emp4',
+    employeeId: '4',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Site Operations',
+    isActive: true,
+    salt: 'salt-emp-4',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-5',
+    username: 'emp5',
+    employeeId: '5',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Field Quality & Safety',
+    isActive: true,
+    salt: 'salt-emp-5',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-6',
+    username: 'emp6',
+    employeeId: '6',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Site Logistics',
+    isActive: true,
+    salt: 'salt-emp-6',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-7',
+    username: 'emp7',
+    employeeId: '7',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Civil Structure',
+    isActive: true,
+    salt: 'salt-emp-7',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-8',
+    username: 'emp8',
+    employeeId: '8',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Inverter & HT Yard',
+    isActive: true,
+    salt: 'salt-emp-8',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-9',
+    username: 'emp9',
+    employeeId: '9',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Survey & Transmission',
+    isActive: true,
+    salt: 'salt-emp-9',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+  {
+    id: 'user-emp-10',
+    username: 'emp10',
+    employeeId: '10',
+    name: '', // Blank by default
+    role: 'employee',
+    department: 'Rooftop EPC',
+    isActive: true,
+    salt: 'salt-emp-10',
+    passwordHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+  },
+];
+
+// The 15 categories requested in Section 6
+export const INITIAL_CATEGORIES: CategoryItem[] = [
+  { id: 'cat-1', name: 'Travelling', hindiName: 'यात्रा', description: 'Business travel & intercity trips', isActive: true, isSystem: true },
+  { id: 'cat-2', name: 'Bus / Train / Auto / Taxi', hindiName: 'बस / ट्रेन / ऑटो / टैक्सी', description: 'Public & private local conveyance', isActive: true, isSystem: true },
+  { id: 'cat-3', name: 'Food', hindiName: 'भोजन', description: 'Lunch, dinner & field meal charges', isActive: true, isSystem: true },
+  { id: 'cat-4', name: 'Tea / Water', hindiName: 'चाय / पानी', description: 'Daily site refreshments & drinking water', isActive: true, isSystem: true },
+  { id: 'cat-5', name: 'Hotel / Room Rent', hindiName: 'होटल / कमरा किराया', description: 'Outstation lodging during solar installation', isActive: true, isSystem: true },
+  { id: 'cat-6', name: 'Material Purchase', hindiName: 'सामग्री खरीद', description: 'Urgent hardware, lugs, conduits, cable ties, fasteners', isActive: true, isSystem: true },
+  { id: 'cat-7', name: 'Tools and Equipment', hindiName: 'उपकरण व औजार', description: 'Crimpers, torque wrenches, MC4 connectors, meters', isActive: true, isSystem: true },
+  { id: 'cat-8', name: 'Labour Payment', hindiName: 'मजदूरी भुगतान', description: 'Daily muster wages and helper payments', isActive: true, isSystem: true },
+  { id: 'cat-9', name: 'Fuel / Petrol / Diesel', hindiName: 'ईंधन / पेट्रोल / डीजल', description: 'Fuel for project transit vehicles', isActive: true, isSystem: true },
+  { id: 'cat-10', name: 'Parking', hindiName: 'पार्किंग', description: 'Parking tickets and charges', isActive: true, isSystem: true },
+  { id: 'cat-11', name: 'Toll Tax', hindiName: 'टोल टैक्स', description: 'Highway FASTag and toll charges', isActive: true, isSystem: true },
+  { id: 'cat-12', name: 'Site Miscellaneous', hindiName: 'साइट विविध खर्चे', description: 'Emergency site provisions, consumables, tarpaulin', isActive: true, isSystem: true },
+  { id: 'cat-13', name: 'Office Expenses', hindiName: 'कार्यालय व्यय', description: 'Stationery, printing drawings, utilities', isActive: true, isSystem: true },
+  { id: 'cat-14', name: 'Employee Advance', hindiName: 'कर्मचारी अग्रिम', description: 'Advance disbursed to employee', isActive: true, isSystem: true },
+  { id: 'cat-15', name: 'Other Expenses', hindiName: 'अन्य खर्चे', description: 'Miscellaneous operational expenses', isActive: true, isSystem: true },
+];
+
+// EXPENSES START AT ZERO (0) AS REQUESTED
+export const INITIAL_EXPENSES: Expense[] = [];
+
+// ADVANCES START AT ZERO (0) AS REQUESTED
+export const INITIAL_ADVANCES: EmployeeAdvance[] = [];
+
+// PAYMENTS START AT ZERO (0) AS REQUESTED
+export const INITIAL_PAYMENTS: PaymentTransaction[] = [];

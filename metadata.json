@@ -1,0 +1,6 @@
+{
+  "name": "Sunvault Expenses Manager",
+  "description": "Professional solar EPC project expense management application for Sunvault Powertech Pvt. Ltd. featuring real-time expense calculations, site tracking, employee advances, and approval workflows.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
